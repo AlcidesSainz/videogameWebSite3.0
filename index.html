@@ -9,14 +9,14 @@
     <title>Gaming Library</title>
 
     <!-- Google Font -->
-    <link
+    <!-- <link
       href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <link
       href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700;800;900&display=swap"
       rel="stylesheet"
-    />
+    /> -->
 
     <!-- Css Styles -->
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" />
@@ -72,12 +72,11 @@
               </nav>
             </div>
           </div>
-          <div class="col-lg-2">
-            <div class="header__right">
-              <a href="#" class="search-switch"
-                ><span class="icon_search"></span
-              ></a>
-            </div>
+          <div class="col-lg-2" style="padding:10px;">
+            <div class="input-group mb-3"> 
+              <input type="text" class="form-control"  id="searchInput" placeholder="Search here....." />
+              <button class="btn btn-outline-secondary" type="button" id="searchButton"><i class="fa fa-search"></i></button>
+            </div>           
           </div>
         </div>
         <div id="mobile-menu-wrap"></div>
@@ -336,10 +335,11 @@
       <div class="h-100 d-flex align-items-center justify-content-center">
         <div class="search-close-switch"><i class="icon_close"></i></div>
         <form class="search-model-form">
-          <input type="text" id="search-input" placeholder="Search here....." />
+          <input type="text" id="searchInput" placeholder="Search here....." />
         </form>
       </div>
     </div>
+
     <!-- Search model end -->
 
     <!-- Js Plugins -->
