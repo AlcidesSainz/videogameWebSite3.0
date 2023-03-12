@@ -50,33 +50,48 @@
             <div class="header__nav">
               <nav class="header__menu mobile-menu">
                 <ul>
-                  <li class="active"><a href="./index.html">Homepage</a></li>
+                  <li class="active"><a href="./index.html">Inicio</a></li>
                   <li>
-                    <a href="./categories.html"
-                      >Categories <span class="arrow_carrot-down"></span
+                    <a href="#"
+                      >Minijuegos <span class="arrow_carrot-down"></span
                     ></a>
                     <ul class="dropdown">
-                      <li><a href="./categories.html">Categories</a></li>
-                      <li><a href="./anime-details.html">Anime Details</a></li>
                       <li>
-                        <a href="./anime-watching.html">Anime Watching</a>
+                        <a href="flappyBird/flappyBird.html" target="_blank"
+                          >Flappy Bird</a
+                        >
                       </li>
-                      <li><a href="./blog-details.html">Blog Details</a></li>
-                      <li><a href="./signup.html">Sign Up</a></li>
-                      <li><a href="./login.html">Login</a></li>
                     </ul>
                   </li>
-                  <li><a href="./blog.html">Our Blog</a></li>
-                  <li><a href="#">Contacts</a></li>
+                  <li><a href="#">Sobre mi</a></li>
                 </ul>
               </nav>
             </div>
           </div>
-          <div class="col-lg-2" style="padding:10px;">
-            <div class="input-group mb-3"> 
-              <input type="text" class="form-control"  id="searchInput" placeholder="Search here....." />
-              <button class="btn btn-outline-secondary" type="button" id="searchButton"><i class="fa fa-search"></i></button>
-            </div>           
+          <div class="col-lg-2" style="padding: 10px">
+            <div class="input-group mb-3">
+              <input
+                type="text"
+                class="form-control"
+                id="searchInput"
+                placeholder="Buscador..."
+              />
+              <button
+                class="btn btn-outline-secondary"
+                type="button"
+                id="searchButton"
+                onclick="irARecomendados()"
+              >
+                <script>
+                  function irARecomendados() {
+                    var elemento = document.getElementById("recomendaciones");
+                    elemento.scrollIntoView({ behavior: "smooth" });
+                    
+                  }
+                </script>
+                <i class="fa fa-search"></i>
+              </button>
+            </div>
           </div>
         </div>
         <div id="mobile-menu-wrap"></div>
@@ -101,14 +116,7 @@
               <div class="row">
                 <div class="col-lg-8 col-md-8 col-sm-8">
                   <div class="section-title">
-                    <h4>Recomendaciones</h4>
-                  </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-4">
-                  <div class="btn__all">
-                    <a href="#" class="primary-btn"
-                      >Ver Todo <span class="arrow_right"></span
-                    ></a>
+                    <h4 id="recomendaciones">Recomendaciones</h4>
                   </div>
                 </div>
               </div>
@@ -224,11 +232,13 @@
                 <div class="product__sidebar__comment__item">
                   <!--Hogwarts Legacy-->
                   <div class="product__sidebar__comment__item__pic">
-                    <img
-                      src="img/videogames/hl2.jpg"
-                      alt=""
-                      style="width: 100%; height: 100%"
-                    />
+                    <a href="anime-details.html?id=906547" target="_blank">
+                      <img
+                        src="img/videogames/hl2.jpg"
+                        alt=""
+                        style="width: 100%; height: 100%"
+                      />
+                    </a>
                   </div>
                 </div>
                 <div class="product__sidebar__comment__item">
@@ -237,18 +247,25 @@
                       <li>Action</li>
                       <li>RPG</li>
                     </ul>
-                    <h5><a href="#">Hogwarts Legacy</a></h5>
+                    <!--Id del juego: 906547-->
+                    <h5>
+                      <a href="anime-details.html?id=906547" target="_blank"
+                        >Hogwarts Legacy</a
+                      >
+                    </h5>
                   </div>
                 </div>
 
                 <div class="product__sidebar__comment__item">
-                  <!--AtomicHeart Legacy-->
+                  <!--AtomicHeart-->
                   <div class="product__sidebar__comment__item__pic">
-                    <img
-                      src="img/videogames/ah.jfif"
-                      alt=""
-                      style="width: 100%; height: 100%"
-                    />
+                    <a href="anime-details.html?id=50576" target="_blank">
+                      <img
+                        src="img/videogames/ah.jfif"
+                        alt=""
+                        style="width: 100%; height: 100%"
+                      />
+                    </a>
                   </div>
                 </div>
                 <div class="product__sidebar__comment__item">
@@ -257,18 +274,24 @@
                       <li>Shooter</li>
                       <li>Adventure</li>
                     </ul>
-                    <h5><a href="#">Atomic Heart</a></h5>
+                    <h5>
+                      <a href="anime-details.html?id=50576" target="_blank"
+                        >Atomic Heart</a
+                      >
+                    </h5>
                   </div>
                 </div>
 
                 <div class="product__sidebar__comment__item">
                   <!--Dead Space-->
                   <div class="product__sidebar__comment__item__pic">
-                    <img
-                      src="img/videogames/ds.jpg"
-                      alt=""
-                      style="width: 100%; height: 100%"
-                    />
+                    <a href="anime-details.html?id=4570" target="_blank">
+                      <img
+                        src="img/videogames/ds.jpg"
+                        alt=""
+                        style="width: 100%; height: 100%"
+                      />
+                    </a>
                   </div>
                 </div>
                 <div class="product__sidebar__comment__item">
@@ -277,7 +300,11 @@
                       <li>Survival</li>
                       <li>Horror</li>
                     </ul>
-                    <h5><a href="#">Dead Space Remake</a></h5>
+                    <h5>
+                      <a href="anime-details.html?id=4570" target="_blank"
+                        >Dead Space Remake</a
+                      >
+                    </h5>
                   </div>
                 </div>
               </div>
@@ -306,9 +333,10 @@
             <div class="footer__nav">
               <ul>
                 <li class="active"><a href="./index.html">Homepage</a></li>
-                <li><a href="./categories.html">Categories</a></li>
-                <li><a href="./blog.html">Our Blog</a></li>
-                <li><a href="#">Contacts</a></li>
+                <li>
+                  <a href="./index.html">Minijuegos </a>
+                </li>
+                <li><a href="#">Sobre mi</a></li>
               </ul>
             </div>
           </div>
@@ -320,8 +348,7 @@
                 document.write(new Date().getFullYear());
               </script>
               All rights reserved | This template is made with
-              <i class="fa fa-heart" aria-hidden="true"></i> by
-              <a href="https://colorlib.com" target="_blank">Colorlib</a>
+              <i class="fa fa-heart" aria-hidden="true"></i> by Sainz
               <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
             </p>
           </div>

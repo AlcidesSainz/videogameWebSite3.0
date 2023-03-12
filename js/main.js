@@ -37,8 +37,6 @@
     var bg = $(this).data("setbg");
     $(this).css("background-image", "url(" + bg + ")");
   });
- 
-  
 
   /*------------------
 		Navigation
@@ -164,11 +162,10 @@
   };
 
   const trending = (url) => {
-   
     const data = {};
 
-    if (url = null || url == undefined || url == '') {
-      const randomNum = Math.floor(Math.random() * 30) + 2;
+    if ((url = null || url == undefined || url == "")) {
+      const randomNum = Math.floor(Math.random() * 50) + 2;
       url = `https://api.rawg.io/api/games?key=43d750c7481748f99dabb07d5e8aa4eb&page=${randomNum}`;
     }
 
@@ -187,25 +184,26 @@
         $.each(results.slice(0, 18), function (indexInArray, valueOfElement) {
           let { id, name, background_image, genres, metacritic, rating } =
             valueOfElement;
-
+          if (metacritic === null) {
+            return; // si metacritic es nulo, salta al siguiente elemento del loop
+          }
           let genresDescription = "";
 
           $.each(genres, function (index, gender) {
             let { name } = gender;
-            genresDescription += `-<li>${name}</li>`;
+            genresDescription += `<li>${name} </li>`;
           });
 
           let card = `<div class="col-lg-4 col-md-6 col-sm-6">
                                     <div class="product__item">
-                                        <div class="product__item__pic setimg-bg" data-setbg="${background_image}">
-                                            <div class="ep">${metacritic}</div>
-                                            <div class="view">${rating}/5 <i class="fa fa-star"</i> </div>
+                                    <a href="anime-details.html?id=${id}" target="_blank">  <div class="product__item__pic setimg-bg" data-setbg="${background_image}">
+                                            <div class="ep">${metacritic}/100</div>
                                         </div>
                                         <div class="product__item__text">
                                             <ul>
                                                ${genresDescription}
                                             </ul>
-                                            <h5><a href="#">${name}</a></h5>
+                                            <h5><a href="anime-details.html?id=${id}" target="_blank">${name}</a></h5>
                                         </div>
                                     </div>
                                 </div>`;
@@ -221,11 +219,10 @@
       })
       .catch((error) => {
         console.error("Error:", error);
-      }); 
+      });
   };
 
-  $("#searchButton").on("click", ()=>{   
-      
+  $("#searchButton").on("click", () => {
     let searchValue = $("#searchInput").val();
 
     const url = `https://api.rawg.io/api/games?key=43d750c7481748f99dabb07d5e8aa4eb&search=${searchValue}`;
@@ -246,24 +243,26 @@
           let { id, name, background_image, genres, metacritic, rating } =
             valueOfElement;
 
+          if (metacritic === null) {
+            return; // si metacritic es nulo, salta al siguiente elemento del loop
+          }
           let genresDescription = "";
 
           $.each(genres, function (index, gender) {
             let { name } = gender;
-            genresDescription += `-<li>${name}</li>`;
+            genresDescription += `<li>${name}</li>`;
           });
 
           let card = `<div class="col-lg-4 col-md-6 col-sm-6">
                                     <div class="product__item">
-                                        <div class="product__item__pic setimg-bg" data-setbg="${background_image}">
-                                            <div class="ep">${metacritic}</div>
-                                            <div class="view">${rating}/5 <i class="fa fa-star"</i> </div>
+                                    <a href="anime-details.html?id=${id}" target="_blank"><div class="product__item__pic setimg-bg" data-setbg="${background_image}">
+                                            <div class="ep">${metacritic}/100</div>
                                         </div>
                                         <div class="product__item__text">
                                             <ul>
-                                               ${genresDescription}
+                                              ${genresDescription}
                                             </ul>
-                                            <h5><a href="#">${name}</a></h5>
+                                            <h5><a href="anime-details.html?id=${id}" target="_blank">${name}</a></h5>
                                         </div>
                                     </div>
                                 </div>`;
@@ -279,9 +278,8 @@
       })
       .catch((error) => {
         console.error("Error:", error);
-      }); 
-  }
-); 
+      });
+  });
 
   createSlider();
   trending();
