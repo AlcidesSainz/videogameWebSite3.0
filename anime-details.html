@@ -57,7 +57,33 @@
                       >Minijuegos <span class="arrow_carrot-down"></span
                     ></a>
                     <ul class="dropdown">
-                      <li><a href="#">Flappy Bird</a></li>
+                      <li>
+                        <a
+                          href="games/flappyBird/flappyBird.html"
+                          target="_blank"
+                          >Flappy Bird</a
+                        >
+                      </li>
+                      <li>
+                        <a href="games/Doodle Jump/index.html" target="_blank"
+                          >Doodle Jump</a
+                        >
+                      </li>
+                      <li>
+                        <a href="games/OX Juego/index.html" target="_blank"
+                          >OX</a
+                        >
+                      </li>
+                      <li>
+                        <a href="games/tetris/index.html" target="_blank"
+                          >Tetris</a
+                        >
+                      </li>
+                      <li>
+                        <a href="games/Snake/index.html" target="_blank"
+                          >Snake</a
+                        >
+                      </li>
                     </ul>
                   </li>
                   <li><a href="#">Sobre mi</a></li>
@@ -204,8 +230,7 @@
                 document.write(new Date().getFullYear());
               </script>
               All rights reserved | This template is made with
-              <i class="fa fa-heart" aria-hidden="true"></i> by
-              Sainz
+              <i class="fa fa-heart" aria-hidden="true"></i> by Sainz
               <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
             </p>
           </div>
@@ -313,11 +338,12 @@
           $("#game-stores").html(`<span>Tiendas:</span> ${stores.join(", ")}`);
           //Condicional para el color de la caja de calificacion
 
-          const classMetacritic = scoreMeta >= 75 ? 'green' : scoreMeta >= 50 ? 'yellow' : 'red';
+          const classMetacritic =
+            scoreMeta >= 75 ? "green" : scoreMeta >= 50 ? "yellow" : "red";
 
           $("#game-metacritic-score").html(
-              `<div class="box ${classMetacritic}">${scoreMeta}/100<br/> <p style='font-size:30px'></p></div>`
-            );
+            `<div class="box ${classMetacritic}">${scoreMeta}/100<br/> <p style='font-size:30px'></p></div>`
+          );
 
           // if (scoreMeta >= 75) {
           //   $("#game-metacritic-score").html(
